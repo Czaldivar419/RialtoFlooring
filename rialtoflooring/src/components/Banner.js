@@ -1,10 +1,14 @@
+import React from "react";
+
+import { BannerSection, BannerTitle, BannerDescription, BannerButton } from "./styled/homepage.styled";
+
 function Banner() {
     return (
-      <section className="banner">
-        <h2>Welcome to Rialto Flooring</h2>
-        <p>With over 20 years of experience, we offer high-quality flooring and construction services for both residential and commercial properties. Contact us today to get started!</p>
-        <button>Contact Us</button>
-      </section>
+<BannerSection>
+<BannerTitle>Quality Flooring Services</BannerTitle>
+<BannerDescription>Transform your space with our expert flooring services</BannerDescription>
+<BannerButton>Get Started</BannerButton>
+</BannerSection>
     );
   }
   export default Banner;

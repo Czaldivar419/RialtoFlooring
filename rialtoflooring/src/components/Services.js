@@ -1,16 +1,31 @@
+import React from 'react';
+
+import { ServicesSection, ServiceTitle, ServiceItem, ServiceIcon,
+ServicesTitle, ServicesList } from './styled/homepage.styled';
+
+
 function Services() {
     return (
-      <section className="services">
-        <h2>Our Services</h2>
-        <ul>
-          <li>Hardwood Flooring</li>
-          <li>Laminate Flooring</li>
-          <li>Tile Flooring</li>
-          <li>Carpet Installation</li>
-          <li>General Construction</li>
-          <li>Remodeling</li>
-        </ul>
-      </section>
+      <ServicesSection>
+<ServicesTitle>Our Services</ServicesTitle>
+<ServicesList>
+<ServiceItem>
+<ServiceIcon src="/service-1.png" alt="Service 1" />
+<ServiceTitle>Hardwood Flooring</ServiceTitle>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices euismod massa, vel ultricies ex venenatis in.</p>
+</ServiceItem>
+<ServiceItem>
+<ServiceIcon src="/service-2.png" alt="Service 2" />
+<ServiceTitle>Laminate Flooring</ServiceTitle>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices euismod massa, vel ultricies ex venenatis in.</p>
+</ServiceItem>
+<ServiceItem>
+<ServiceIcon src="/service-3.png" alt="Service 3" />
+<ServiceTitle>Tile Flooring</ServiceTitle>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices euismod massa, vel ultricies ex venenatis in.</p>
+</ServiceItem>
+</ServicesList>
+    </ServicesSection>
     );
   }
   

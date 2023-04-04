@@ -1,8 +1,11 @@
+import React from "react";
+
+import { FooterContainer, FooterText, FooterLink } from "./styled/homepage.styled";
 function Footer() {
     return (
-      <footer>
-        <p>© 2023 Rialto Flooring. All rights reserved.</p>
-      </footer>
+      <FooterContainer>
+        <FooterText>© 2023 Rialto Flooring. All rights reserved.</FooterText>
+      </FooterContainer>
     );
   }
 

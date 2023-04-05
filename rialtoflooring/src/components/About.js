@@ -6,7 +6,7 @@ import { AboutUsSection, AboutUsTitle,
 
 function About() {
     return (
-        <AboutUsSection>
+        <AboutUsSection id="About">
         <AboutUsTitle>About Us</AboutUsTitle>
         <AboutUsDescription>
           Rialto Flooring is a leading flooring company specializing in providing high-quality flooring services to residential and commercial clients. With over 10 years of experience in the industry, we have built a reputation for delivering exceptional results and outstanding customer service.

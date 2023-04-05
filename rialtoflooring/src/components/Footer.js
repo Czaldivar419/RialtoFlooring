@@ -1,6 +1,6 @@
 import React from "react";
 
-import { FooterContainer, FooterText, FooterLink } from "./styled/homepage.styled";
+import { FooterContainer, FooterText } from "./styled/homepage.styled";
 function Footer() {
     return (
       <FooterContainer>

@@ -1,18 +1,33 @@
-import React from 'react';
-import { HeaderContainer, Logo, Nav } from './styled/homepage.styled';
+import React, { useState } from "react";
+
+import { NavbarContainer, Hamburger, NavLinks } from "./styled/homepage.styled";
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <HeaderContainer>
-  <Logo>Rialto Flooring</Logo>
-  <Nav>
-  <a href="#">Home</a>
-  <a href="#">About Us</a>
-  <a href="#">Products</a>
-  <a href="#">Services</a>
-  <a href="#">Contact Us</a>
-  </Nav>
-  </HeaderContainer>
+    <NavbarContainer>
+      <a href="/">Logo</a>
+      <Hamburger onClick={toggleNav}>☰</Hamburger>
+      <NavLinks isOpen={isOpen}>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/">About</a>
+        </li>
+        <li>
+          <a href="/">Services</a>
+        </li>
+        <li>
+          <a href="/">Contact Us</a>
+        </li>
+      </NavLinks>
+    </NavbarContainer>
   );
 }
 

@@ -1,19 +1,20 @@
 import React from "react";
+import { AboutUsSection, AboutUsTitle, AboutUsDescription, AboutUsImage } from '../components/styled/homepage.styled';
 
-import { AboutUsSection, AboutUsTitle, 
-    AboutUsDescription, AboutUsImage } from '../components/styled/homepage.styled';
-
-
-function About() {
-    return (
-        <AboutUsSection id="About">
+const About = () => {
+  return (
+    <AboutUsSection id="About">
+      <div>
         <AboutUsTitle>About Us</AboutUsTitle>
         <AboutUsDescription>
-          Rialto Flooring is a leading flooring company specializing in providing high-quality flooring services to residential and commercial clients. With over 10 years of experience in the industry, we have built a reputation for delivering exceptional results and outstanding customer service.
+          Rialto Flooring is a dedicated team of expert craftsmen with years of experience delivering exceptional flooring and construction services. We're committed to exceeding our clients' expectations by providing top-quality craftsmanship, unmatched customer service, and creating beautiful and functional spaces. We offer a wide range of services, including hardwood, laminate, vinyl, and tile flooring installation, remodeling, and custom home building. Trust us to bring your vision to life with the highest standards of quality and customer service. Contact us today to schedule a consultation and experience the difference that quality and expertise can make.
         </AboutUsDescription>
-        <AboutUsImage src="/about-us.png" alt="About Us" />
-      </AboutUsSection>
-    );
-  }
-  
-  export default About;
+      </div>
+      <div>
+        <AboutUsImage src="tilefloor.webp" alt="About Us" />
+      </div>
+    </AboutUsSection>
+  );
+};
+
+export default About;

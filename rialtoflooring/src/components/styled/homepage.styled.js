@@ -1,11 +1,35 @@
 import styled from 'styled-components';
 
 export const AboutUsSection = styled.section`
-  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 65px;
+
+  @media (min-width: 576px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  & > div {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+
+    @media (min-width: 576px) {
+      width: 50%;
+      text-align: left;
+    }
+  }
+  `;
+
+export const AboutUsContent = styled.div`
+  width: 90%;
+  max-width: 800px;
 `;
 
-export const AboutUsTitle = styled.h2`
-  font-size: 2rem;
+export const AboutUsTitle = styled.h1`
+  font-size: 2.5rem;
   margin-bottom: 20px;
   text-align: center;
 `;
@@ -14,14 +38,18 @@ export const AboutUsDescription = styled.p`
   font-size: 1.2rem;
   text-align: center;
   margin-bottom: 40px;
+  padding: 30px;
 `;
 
 export const AboutUsImage = styled.img`
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
   display: block;
+  margin: 0 auto 20px;
+  max-width: 100%;
+  border: 3px solid #ccc;
+  border-radius: 1%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 `;
+
 
 export const FooterContainer = styled.footer`
   background-color: #333;
@@ -67,72 +95,85 @@ export const Logo = styled.h1`
   }
 `;
 
-export const NavLinks = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-  text-align: center;
-  margin-right: -22px;
-
-  li {
-    padding: 8px 0;
-  }
-
-  a {
-    color: #222;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 2px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: #3b3b3b;
-    }
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
-    left: 0;
-    transition: all 0.3s ease;
-    background-color: #fff;
-  }
-`;
-
-export const Hamburger = styled.div`
-  display: none;
-  cursor: pointer;
-
-  @media (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 2rem;
-    cursor: pointer;
-  }
-`;
 
 export const NavbarContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  padding: 1rem 2rem;
   background-color: #fff;
-  padding: 0 20px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
+  z-index: 10;
+  transition: line-height .3s ease-in-out;
+  line-height: ${({ isOpen }) => (isOpen ? "5rem" : "3.5rem")};
+`;
 
+export const HamburgerContainer = styled.div`
+  display: none;
   @media (max-width: 768px) {
-    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+`;
+
+export const Hamburger = styled.div`
+  font-size: 2rem;
+  cursor: pointer;
+  display: ${({ isOpen }) => (isOpen ? "none" : "block")};
+`;
+
+export const TransparentButton = styled.div`
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+`;
+
+export const NavLinks = styled.ul`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    position: fixed;
+    top: 80px;
+    left: ${({ isOpen }) => (isOpen ? "0" : "-120%")};
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: #fff;
+    transition: all 0.5s ease-in-out;
+    margin-top: .5rem;
+  }
+
+  li:not(:last-child) {
+    margin-right: 2rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    padding: 1rem;
+    &:hover {
+      color: #666;
+    }
+  }
+`;
+
+export const ExitButton = styled.div`
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  @media (max-width: 768px) {
+    display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
   }
 `;
 
@@ -185,11 +226,19 @@ export const BannerButton = styled.button`
 `;
 
 export const ServicesSection = styled.section`
-  padding: 30px;
+  padding: 0 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 0 25px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 0 20px;
+  }
 `;
 
 export const ServicesTitle = styled.h2`

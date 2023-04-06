@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-import { NavbarContainer, Hamburger, NavLinks } from "./styled/homepage.styled";
+import { NavbarContainer, Hamburger, 
+  TransparentButton, HamburgerContainer, NavLinks, ExitButton } from "./styled/homepage.styled";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,22 +10,30 @@ function Header() {
     setIsOpen(!isOpen);
   };
 
+  const closeNav = () => {
+    setIsOpen(false);
+  };
+
   return (
     <NavbarContainer>
       <a href="/">Logo</a>
-      <Hamburger onClick={toggleNav}>☰</Hamburger>
+      <TransparentButton />
+      <HamburgerContainer>
+        <Hamburger isOpen={isOpen} onClick={toggleNav}>☰</Hamburger>
+        <ExitButton isOpen={isOpen} onClick={closeNav}>×</ExitButton>
+      </HamburgerContainer>
       <NavLinks isOpen={isOpen}>
         <li>
-          <a href="/">Home</a>
+          <a href="#home" onClick={closeNav}>Home</a>
         </li>
         <li>
-          <a href="/">About</a>
+          <a href="#About" onClick={closeNav}>About</a>
         </li>
         <li>
-          <a href="/">Services</a>
+          <a href="#Services" onClick={closeNav}>Services</a>
         </li>
         <li>
-          <a href="/">Contact Us</a>
+          <a href="#contact" onClick={closeNav}>Contact Us</a>
         </li>
       </NavLinks>
     </NavbarContainer>
